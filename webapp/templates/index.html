@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Sign Detection
+{% endblock title %}
+
+
+{% block custom_css %}
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock custom_css %}
+
+
+{% block body %}
+<!-- nav bar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top" style="background-color: #252526;">
+    <a class="navbar-brand" href="/">Sign Language Detection</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/c17hawke/dvc-plus-cml-test">source code</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- nav bar ends -->
+<br>
+<img src="/static/main_img.jpg" width="300" height="300">
+
+<div class="container">
+        <h2 style="color:rgb(0, 0, 0); padding-top: 2.5%; padding-bottom: 1%;"><b>Gesture Sign Recognition</b></h2>
+</div>
+
+<div>
+    <form action="/data" enctype="multipart/form-data" method="POST">
+        <label for="myfile">
+            <h3>Select a file:</h2>
+                <input type="file" id="myfile" class="btn btn-primary file-input" name="image" accept="image/*">
+        </label>
+        <div style="padding: 5px;">
+            <input type="submit" value="Send" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+
+<p class="text-success"><b>{{ messege }}</b></p>
+
+
+{% endblock body %}
+
+{% block custom_js %}
+<!-- Custom JS -->
+<!--  <script src="{{ url_for('static', filename='script/index.js') }}"></script> -->
+{% endblock custom_js %}

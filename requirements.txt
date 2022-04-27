@@ -11,3 +11,5 @@ tox
 flake8
 flask
 gunicorn
+python3-opencv
+scikit-fuzzy
